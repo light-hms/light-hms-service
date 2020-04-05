@@ -1,5 +1,6 @@
 package com.lighthms.lighthmsservice.people;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.lighthms.lighthmsservice.BaseEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,13 +16,17 @@ import java.time.Period;
 public class Person extends BaseEntity {
     private String firstName;
     private String lastName;
-    private LocalDate dateOfBirth;
 
-    public Person(String firstName, String lastName, LocalDate dateOfBirth) {
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dateOfBirth;
+    private String phoneNumber;
+
+    public Person(String firstName, String lastName, LocalDate dateOfBirth, String phoneNumber) {
         Assert.isTrue(age(dateOfBirth) > 0 && age(dateOfBirth) < 100, "Incorrect age range");
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateOfBirth = dateOfBirth;
+        this.phoneNumber = phoneNumber;
     }
 
     public int age() {

@@ -4,10 +4,7 @@ import com.lighthms.lighthmsservice.BaseEntity;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,9 +14,9 @@ import java.util.List;
 public class Doctor extends BaseEntity {
 
     private String code;
-    private String externalDoctorId;
+    private String externalId;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Person person;
 
     private String designation;

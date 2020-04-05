@@ -11,17 +11,17 @@ class PersonTest {
 
     @Test
     void expectValidYears() {
-        Person person = new Person("Jon", "Denver", LocalDate.of(1990, 01, 01));
+        Person person = new Person("Jon", "Denver", LocalDate.of(1990, 01, 01), "1232132131");
         assertThat(person.age()).isEqualTo(30);
     }
 
     @Test
     void expectIncorrectAgeToFail() {
         assertThrows(IllegalArgumentException.class, () -> {
-            new Person("Jon", "Denver", LocalDate.of(2021, 01, 01));
+            new Person("Jon", "Denver", LocalDate.of(2021, 01, 01), "1232132131");
         });
         assertThrows(IllegalArgumentException.class, () -> {
-            new Person("Jon", "Denver", LocalDate.of(1919, 01, 01));
+            new Person("Jon", "Denver", LocalDate.of(1919, 01, 01), "1232132131");
         });
     }
 }
