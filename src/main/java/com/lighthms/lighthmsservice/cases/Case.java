@@ -1,7 +1,6 @@
 package com.lighthms.lighthmsservice.cases;
 
 import com.lighthms.lighthmsservice.BaseEntity;
-import com.lighthms.lighthmsservice.organization.Bed;
 import com.lighthms.lighthmsservice.people.Patient;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,4 +27,9 @@ public class Case extends BaseEntity {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Examination> examinations = new ArrayList<>(0);
+
+    public Case addEvent(CaseEvent event) {
+        this.events.add(event);
+        return this;
+    }
 }
