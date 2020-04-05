@@ -1,3 +1,5 @@
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=HMS&uri=https%3A%2F%2Fraw.githubusercontent.com%2Flight-hms%2Flight-hms-service%2Fmaster%2Finsomnia_latest.json)
+
 # Lightweight HMS
 
 ## Local database
