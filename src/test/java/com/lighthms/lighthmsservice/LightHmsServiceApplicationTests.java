@@ -3,8 +3,8 @@ package com.lighthms.lighthmsservice;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class LightHmsServiceApplicationTests {
+
+class LightHmsServiceApplicationTests extends AbstractIntegrationTest{
 
     @Test
     void contextLoads() {

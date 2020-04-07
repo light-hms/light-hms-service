@@ -24,12 +24,6 @@ public class CaseRepositoryIntegrationTests extends AbstractIntegrationTest {
     @Autowired
     private CaseRepository caseRepository;
 
-
-    @Test
-    public void contextLoads() {
-        log.info("test");
-    }
-
     @Test
     public void addsNewCase() {
 
