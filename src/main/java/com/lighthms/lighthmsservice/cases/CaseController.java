@@ -10,12 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequiredArgsConstructor
 @RepositoryRestController
-@RequestMapping(name = "/cases")
 public class CaseController {
 
     private final CaseRepository caseRepository;
 
-    @PutMapping("/{case_id}/add-event")
+    @PutMapping("/cases/{case_id}/add-event")
     public ResponseEntity<?> addEvent(@PathVariable("case_id") Case caseObject, @RequestBody CaseEvent event) {
         Case aCase = caseObject.addEvent(event);
         caseRepository.save(aCase);
