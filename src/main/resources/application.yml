@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    active: develop
+---
+spring:
+  application:
+    name: lighthms-service
+  jpa:
+    open-in-view: false
+  main:
+    allow-bean-definition-overriding: true
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+  data:
+    jpa:
+      repositories:
+        bootstrap-mode: deferred
+    rest:
+      enable-enum-translation: true
+  jmx:
+    enabled: false

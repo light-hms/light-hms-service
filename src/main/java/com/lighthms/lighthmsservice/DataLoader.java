@@ -35,7 +35,7 @@ public class DataLoader implements CommandLineRunner {
 
         HealthInstitution healthInstitution = new HealthInstitution("BMC", "Bangalore", Institution.HOSPITAL)
                 .addHospital(victoria).addHospital(minto).addHospital(vaniVilas).addHospital(mantri);
-        healthInstitutionRepository.save(healthInstitution);
-        log.info("Loaded data");
+        healthInstitution = healthInstitutionRepository.save(healthInstitution);
+        log.info("Loaded data: {}", healthInstitution);
     }
 }

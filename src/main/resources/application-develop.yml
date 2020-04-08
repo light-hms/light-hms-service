@@ -1,0 +1,19 @@
+spring:
+  profiles: develop
+---
+spring:
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5473/hms_local}
+    username: ${DATASOURCE_USERNAME:hms}
+    password: ${DATASOURCE_PASSWORD:hms}
+    hikari:
+      maximum-pool-size: ${DB_POOL_MAX_SIZE:2}
+      minimum-idle: ${DB_POOL_MIN_IDLE:1}
+      idle-timeout: ${DB_POOL_IDLE_TIMEOUT_IN_MS:30000}
+  liquibase:
+    change-log: classpath:db/changelog/liquibase-changelog.xml
+    enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true

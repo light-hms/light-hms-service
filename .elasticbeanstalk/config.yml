@@ -1,18 +1,19 @@
 branch-defaults:
   master:
     environment: light-hms-service-dev
-    group_suffix: null
+deploy:
+  artifact: target/light-hms-service-0.0.1-SNAPSHOT-deploy.zip
 global:
   application_name: light-hms-service
   branch: null
-  default_ec2_keyname: aws-india
+  default_ec2_keyname: aws_ec2
   default_platform: Java 8
   default_region: ap-south-1
   include_git_submodules: true
   instance_profile: null
   platform_name: null
   platform_version: null
-  profile: null
+  profile: lighthms-deploy
   repository: null
   sc: git
   workspace_type: Application
