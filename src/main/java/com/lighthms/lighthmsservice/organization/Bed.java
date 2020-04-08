@@ -16,4 +16,8 @@ public class Bed extends BaseEntity {
 
     @OneToOne
     private Patient patient;
+
+    public Bed(String name) {
+        this.name = name;
+    }
 }
