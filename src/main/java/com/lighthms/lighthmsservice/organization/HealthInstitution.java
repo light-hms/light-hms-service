@@ -20,4 +20,15 @@ public class HealthInstitution extends BaseEntity {
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Hospital> hospitals = new ArrayList<>(0);
+
+    public HealthInstitution(String name, String address, Institution institutionType) {
+        this.name = name;
+        this.address = address;
+        this.institutionType = institutionType;
+    }
+
+    public HealthInstitution addHospital(Hospital hospital) {
+        this.hospitals.add(hospital);
+        return this;
+    }
 }

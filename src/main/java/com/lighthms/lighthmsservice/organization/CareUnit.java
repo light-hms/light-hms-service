@@ -23,4 +23,16 @@ public class CareUnit extends BaseEntity {
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Doctor> oncallDoctors = new ArrayList<>(0);
+
+    public CareUnit(String name, Department department) {
+        this.name = name;
+        this.department = department;
+    }
+
+    public CareUnit addBeds(int count) {
+        for (int i = 0; i < count; i++) {
+            beds.add(new Bed(name + "-" + i));
+        }
+        return this;
+    }
 }
